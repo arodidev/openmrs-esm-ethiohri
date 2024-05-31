@@ -69,17 +69,13 @@
           "houseNumber",
           "mobiletelephoneNumber",
           "hometelephoneNumber",
-          "worktelephoneNumber",
-          "obs-test-phoneNumber",
-          "obs-test-fullName",
-          "obs-test-gender",
-          "obs-test-registrationDate"
+          "worktelephoneNumber"
         ]
       },
       {
         "id": "demographics",
         "name": "Basic Info",
-        "fields": ["name", "gender", "dob", "id"]
+        "fields": ["registrationDate","name", "gender", "dob", "id", "enrolledInPmtct"]
       }
     ],
     "fieldDefinitions": [
@@ -105,37 +101,25 @@
         }
       },
       {
-        "id": "obs-test-phoneNumber",
-        "label": "Obs-Test Phone number",
-        "type": "obs",
-        "uuid": "159635AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-      },
-      {
-        "id": "obs-test-fullName",
-        "label": "Obs-Test Full name",
-        "type": "obs",
-        "uuid": "166103AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-      },
-      {
-        "id": "obs-test-registrationDate",
-        "label": "Obs-Test Registration date",
+        "id": "registrationDate",
+        "label": "Registration date",
         "type": "obs",
         "uuid": "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
       },
       {
-        "id": "obs-test-gender",
-        "label": "Obs-Test Gender",
+        "id": "enrolledInPmtct",
+        "label": "Enrolled in PMTCT ?",
         "type": "obs",
-        "uuid": "1533AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "uuid": "163532AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "customConceptAnswers": [
-          {
-            "uuid": "1534AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "label": "Male"
-          },
-          {
-            "uuid": "1535AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "label": "Female"
-          }
+            {
+            "uuid": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "label": "Yes"
+            },
+            {
+            "uuid": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "label": "No"
+            }
         ]
       },
       {
@@ -161,25 +145,17 @@
       "gender": [
         {
           "id": "male",
-          "value": "Male",
+          "value": "male",
           "label": "Male"
         },
         {
           "id": "female",
-          "value": "Female",
+          "value": "female",
           "label": "Female"
         }
       ],
       "name": {
         "allowUnidentifiedPatients": false
-      },
-      "dateOfBirth": {
-        "allowEstimatedDateOfBirth": true,
-        "useEstimatedDateOfBirth": {
-          "enabled": true,
-          "dayOfMonth": 10,
-          "month": 3
-        }
       },
       "address": {
         "useAddressHierarchy": {
