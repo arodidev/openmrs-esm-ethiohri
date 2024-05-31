@@ -118,7 +118,7 @@ const PostExposureRegistration: React.FC<{ patientUuid: string }> = ({
         launchOptions={{
           displayText: "Add",
           moduleName: moduleName,
-          hideFormLauncher: !hasMRN,
+          hideFormLauncher: !hasMRN || isConfirmedPositive,
         }}
       />
       {!hasMRN && <p className={styles.patientName}>{MRN_NULL_WARNING}</p>}

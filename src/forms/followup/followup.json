@@ -72,6 +72,22 @@
 							"id": "visitType"
 						},
 						{
+							"label": "HIV confirmation date",
+							"type": "obs",
+							"id": "hivConfirmationDate",
+							"readonly": true,
+							"questionOptions": {
+							  "concept": "",
+							  "rendering": "date",
+							  "calculate": {
+								"calculateExpression": "resolve(api.getLatestObs(patient.id, '160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '05add044-67f8-48c9-928d-79002ab19efe'))?.valueDateTime"
+							  }
+							},
+							"hide": {
+							  "hideWhenExpression": "true"
+							}
+						  },
+						{
 							"label": "Eligibility status",
 							"type": "obs",
 							"questionOptions": {
@@ -315,28 +331,11 @@
 								{
 									"type": "js_expression",
 									"failsWhenExpression": "myValue < new Date(hivConfirmationDate)",
-									"message": "ART started date should not be earlier than HIV Confirmed date"
+									"message": "ART started date should not be earlier than HIV Confirmation date in Intake A"
 								}
-							],
-							"hide": {
-								"hideWhenExpression": "artStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							}
+							]
 						},
-						{
-							"label": "HIV confirmation date",
-							"type": "obs",
-							"id": "hivConfirmationDate",
-							"questionOptions": {
-							  "concept": "",
-							  "rendering": "fixed-value",
-							  "calculate": {
-								"calculateExpression": "resolve(api.getLatestObs(patient.id, '160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '05add044-67f8-48c9-928d-79002ab19efe'))?.valueDateTime"
-							  }
-							},
-							"hide": {
-							  "hideWhenExpression": "true"
-							}
-						  },
+						
 						{
 							"label": "Months on ART",
 							"type": "obs",
@@ -3454,7 +3453,7 @@
 								]
 							},
 							"hide": {
-								"hideWhenExpression": "specimenSent !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "specimenSent !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || tbScreened !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							}
 						},
 						{
@@ -3478,7 +3477,7 @@
 								]
 							},
 							"hide": {
-								"hideWhenExpression": "specimenSent !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "specimenSent !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || tbScreened !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							}
 						},
 						{
@@ -3501,7 +3500,7 @@
 								]
 							},
 							"hide": {
-								"hideWhenExpression": "specimenSent !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "specimenSent !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || tbScreened !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							}
 						},
 						{
@@ -3573,7 +3572,7 @@
 								]
 							},
 							"hide": {
-								"hideWhenExpression": "isEmpty('diagnosticTest') || specimenSent !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "isEmpty('diagnosticTest') || specimenSent !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || tbScreened !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "tbDiagnosticTestResult"
 						},

@@ -28,6 +28,7 @@
 			  {
 				"label": "Visit date",
 				"type": "obs",
+				"required": true,
 				"questionOptions": {
 				  "rendering": "date",
 				  "concept": "163260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -54,7 +55,7 @@
 			  {
 				"label": "Visit period",
 				"type": "obs",
-				"required": false,
+				"required": true,
 				"id": "visitPeriod",
 				"questionOptions": {
 				  "rendering": "select",

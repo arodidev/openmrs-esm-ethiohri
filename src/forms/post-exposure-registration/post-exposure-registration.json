@@ -127,6 +127,7 @@
 						{
 							"label": "Reporting date",
 							"type": "obs",
+							"required": true,
 							"questionOptions": {
 								"rendering": "date",
 								"concept": "4285d9e8-3ab4-4a94-bd4e-4dd92855795c",
@@ -155,7 +156,7 @@
 						{
 							"label": "Exposure type",
 							"type": "obs",
-							"required": false,
+							"required": true,
 							"id": "exposureType",
 							"questionOptions": {
 								"rendering": "select",
